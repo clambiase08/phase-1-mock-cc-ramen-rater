@@ -1,9 +1,25 @@
+// Extra Advanced Deliverables
+// You'll need these endpoints for the advanced deliverables:
+
+// POST /ramens
+// DELETE /ramens/:id
+// PATCH /ramens/:id
+// As a user, I can:
+
+// persist my updates to a ramen's rating and comment. (PATCH request)
+// persist new ramens that I create (POST request)
+// persist any ramen deletions (DELETE request)
+
+
+//First I need to:
+//[] write a patch request inside the editDish function that sends the new info to the server
 
 //Global variables
 
 const URL = "http://localhost:3000/ramens"
 const button = document.createElement('button')
-button.textContent = "Delete"
+button.textContent = "Delete Ramen"
+let selectedRamen;
 
 
 //DOM Selectors
@@ -47,6 +63,7 @@ function renderImages(ramens) {
     const image = document.createElement('img')
 
     image.src = ramens.image
+    image.id = ramens.name
 
     ramenBar.append(image)
 
@@ -54,6 +71,7 @@ function renderImages(ramens) {
 }
 
 function renderDish(ramens) {
+    selectedRamen = ramens
     detailPic.src = ramens.image
     ramenName.textContent = ramens.ramenName
     restaurant.textContent = ramens.restaurant
@@ -90,13 +108,30 @@ editForm.addEventListener('submit', (e) => {
 })
 
 button.addEventListener('click', () => {
-    const image = document.querySelector('img')
-    image.remove()
+    const ramenItem = ramenBar.querySelectorAll('img')
+    ramenItem.forEach((ramen) => {
+        if (ramen.id === selectedRamen.name) {
+            ramen.remove()
+        }
+    })
 })
 
-//Edit function
+
+//Handler functions
 
 function editDish() {
     rating.textContent = editRating.value
     comment.textContent = editComment.value
+    fetch (`${URL}/${selectedRamen.id}`, {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            rating: parseInt(rating.textContent),
+            comment: comment.textContent,
+        })
+    })
+    .then(res => res.json())
+    .then(json => console.log(json))
 }
