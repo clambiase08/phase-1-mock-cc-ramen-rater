@@ -84,7 +84,7 @@ function renderDish(ramens) {
     rating.textContent = ramens.rating
     comment.textContent = ramens.comment
 
-    ramenForm.appendChild(button)
+    ramenForm.insertAdjacentElement("afterend", button)
 
 }
 
@@ -137,6 +137,7 @@ button.addEventListener('click', () => {
             fetch(`${URL}/${selectedRamen.id}`, {
                 method: "DELETE"
             })
+            .then(res => res.json())
         }
     })
 })
