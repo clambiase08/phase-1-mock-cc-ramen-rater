@@ -76,14 +76,27 @@ function renderDish(ramens) {
 
 }
 
-
-// Event Listeners
-
-ramenForm.addEventListener('submit', (e) => {
-    e.preventDefault()
+function renderNewDish() {
     detailPic.src = newImage.value
     ramenName.textContent = newName.value
     restaurant.textContent = newRestaurant.value
     rating.textContent = newRating.value
     comment.textContent = newComment.value
+    
+}
+
+function renderNewImage() {
+    const image = document.createElement('img')
+    image.src = newImage.value
+    
+    ramenBar.append(image)
+ }
+
+
+// Event Listeners
+
+ramenForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    renderNewDish()
+    renderNewImage()
 })
