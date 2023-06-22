@@ -73,7 +73,7 @@ function renderNewDish() {
     rating.textContent = newRating.value
     comment.textContent = newComment.value
     
-    ramen.append(image)
+    ramenBar.append(image)
 }
 
 
