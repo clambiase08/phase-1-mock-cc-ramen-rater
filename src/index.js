@@ -1,4 +1,15 @@
 
+//Advanced Deliverables:
+// As a user, I can:
+
+// See the details for the first ramen as soon as the page loads (without clicking on an image)
+// Update the rating and comment for a ramen by submitting a form. Changes should be reflected on the frontend. No need to persist. You can add this HTML to the index.html file to create the edit form:
+
+//First I need to:
+//[x] add the render dish function inside the .then chain with an array key of [0] to show the first ramen on page load
+//[]
+
+
 //Global variables
 
 const URL = "http://localhost:3000/ramens"
@@ -29,7 +40,10 @@ function getRamens(url) {
 //Initializer
 
 getRamens(URL)
-.then(ramenArr => ramenArr.forEach(renderImages))
+.then(ramenArr => {
+    ramenArr.forEach(renderImages)
+    renderDish(ramenArr[0])
+})
 
 
 //Render functions
