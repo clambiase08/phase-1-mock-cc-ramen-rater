@@ -12,14 +12,17 @@
 
 
 //First I need to:
-//[] write a patch request inside the editDish function that sends the new info to the server
+//[x] write a patch request inside the editDish function that sends the new info to the server
+
+//Then I need to:
+//[] write a post request inside the render new dish function that sends the new ramen data to the server
 
 //Global variables
 
 const URL = "http://localhost:3000/ramens"
 const button = document.createElement('button')
 button.textContent = "Delete Ramen"
-let selectedRamen;
+// let selectedRamen;
 
 
 //DOM Selectors
@@ -92,6 +95,20 @@ function renderNewDish() {
     comment.textContent = newComment.value
     
     ramenBar.append(image)
+
+    fetch(URL, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: ramenName.textContent,
+            restaurant: restaurant.textContent,
+            image: image.src,
+            rating: parseInt(rating.textContent),
+            comment: comment.textContent
+        })
+    })
 }
 
 
@@ -100,11 +117,13 @@ function renderNewDish() {
 ramenForm.addEventListener('submit', (e) => {
     e.preventDefault()
     renderNewDish()
+    ramenForm.reset()
 })
 
 editForm.addEventListener('submit', (e) => {
     e.preventDefault()
     editDish()
+    editForm.reset()
 })
 
 button.addEventListener('click', () => {

@@ -5,8 +5,8 @@
       "name": "Shoyu Ramen",
       "restaurant": "Nonono",
       "image": "./assets/ramen/shoyu.jpg",
-      "rating": "1",
-      "comment": "ok"
+      "rating": 3,
+      "comment": "test"
     },
     {
       "id": 2,
@@ -39,6 +39,14 @@
       "image": "./assets/ramen/kojiro.jpg",
       "rating": 6,
       "comment": "Perfect for a cold night."
+    },
+    {
+      "name": "New Ramen",
+      "restaurant": "My House",
+      "image": "https://inquiringchef.com/wp-content/uploads/2022/11/Easy-Miso-Ramen_square-0723.jpg",
+      "rating": 2,
+      "comment": "test",
+      "id": 6
     }
   ]
 }
