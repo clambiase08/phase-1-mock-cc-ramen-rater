@@ -15,7 +15,10 @@
 //[x] write a patch request inside the editDish function that sends the new info to the server
 
 //Then I need to:
-//[] write a post request inside the render new dish function that sends the new ramen data to the server
+//[x] write a post request inside the render new dish function that sends the new ramen data to the server
+
+//Finally, I need to:
+//[] add a delete request inside the button event listener to delete the selected ramen from the server
 
 //Global variables
 
@@ -76,7 +79,7 @@ function renderImages(ramens) {
 function renderDish(ramens) {
     selectedRamen = ramens
     detailPic.src = ramens.image
-    ramenName.textContent = ramens.ramenName
+    ramenName.textContent = ramens.name
     restaurant.textContent = ramens.restaurant
     rating.textContent = ramens.rating
     comment.textContent = ramens.comment
@@ -131,6 +134,9 @@ button.addEventListener('click', () => {
     ramenItem.forEach((ramen) => {
         if (ramen.id === selectedRamen.name) {
             ramen.remove()
+            fetch(`${URL}/${selectedRamen.id}`, {
+                method: "DELETE"
+            })
         }
     })
 })

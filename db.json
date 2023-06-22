@@ -17,22 +17,6 @@
       "comment": "My absolute fave!"
     },
     {
-      "id": 3,
-      "name": "Nirvana Shiromaru",
-      "restaurant": "Ippudo",
-      "image": "./assets/ramen/nirvana.jpg",
-      "rating": "7",
-      "comment": "Do buy the hype."
-    },
-    {
-      "id": 4,
-      "name": "Gyukotsu Ramen",
-      "restaurant": "Za-Ya Ramen",
-      "image": "./assets/ramen/gyukotsu.jpg",
-      "rating": 8,
-      "comment": "Good to the last drop."
-    },
-    {
       "id": 5,
       "name": "Kojiro Red Ramen",
       "restaurant": "Ramen-Ya",
@@ -47,6 +31,38 @@
       "rating": 2,
       "comment": "test",
       "id": 6
+    },
+    {
+      "name": "",
+      "restaurant": "",
+      "image": "file:///Users/christinalambiase/Development/code/phase-1/phase-1-mock-cc-ramen-rater/index.html",
+      "rating": null,
+      "comment": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "restaurant": "",
+      "image": "file:///Users/christinalambiase/Development/code/phase-1/phase-1-mock-cc-ramen-rater/index.html",
+      "rating": null,
+      "comment": "",
+      "id": 8
+    },
+    {
+      "name": "New Ramen",
+      "restaurant": "My House",
+      "image": "https://inquiringchef.com/wp-content/uploads/2022/11/Easy-Miso-Ramen_square-0723.jpg",
+      "rating": 3,
+      "comment": "ok",
+      "id": 9
+    },
+    {
+      "name": "New Ramen",
+      "restaurant": "My House",
+      "image": "https://inquiringchef.com/wp-content/uploads/2022/11/Easy-Miso-Ramen_square-0723.jpg",
+      "rating": 3,
+      "comment": "ok",
+      "id": 10
     }
   ]
 }
