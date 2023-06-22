@@ -7,7 +7,9 @@
 
 //First I need to:
 //[x] add the render dish function inside the .then chain with an array key of [0] to show the first ramen on page load
-//[]
+//[x] declare the edit form and edit form input variables in global scope
+//[x] add a submit event listener to the edit ramen form that passes in a callback to edit 
+//[x] write an edit function to edit the rating and comment of the text content of those variables on the DOM based on the value of the inputs
 
 
 //Global variables
@@ -28,6 +30,9 @@ const newName = document.querySelector("#new-name")
 const newRestaurant = document.querySelector("#new-restaurant")
 const newRating = document.querySelector("#new-rating")
 const newComment = document.querySelector("#new-comment")
+const editForm = document.querySelector("#edit-ramen")
+const editRating = document.querySelector("#edit-rating")
+const editComment = document.querySelector("#edit-comment")
 
 
 //Fetch function
@@ -86,3 +91,15 @@ ramenForm.addEventListener('submit', (e) => {
     e.preventDefault()
     renderNewDish()
 })
+
+editForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    editDish()
+})
+
+//Edit function
+
+function editDish() {
+    rating.textContent = editRating.value
+    comment.textContent = editComment.value
+}
