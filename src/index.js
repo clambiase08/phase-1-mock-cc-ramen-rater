@@ -1,24 +1,3 @@
-// Extra Advanced Deliverables
-// You'll need these endpoints for the advanced deliverables:
-
-// POST /ramens
-// DELETE /ramens/:id
-// PATCH /ramens/:id
-// As a user, I can:
-
-// persist my updates to a ramen's rating and comment. (PATCH request)
-// persist new ramens that I create (POST request)
-// persist any ramen deletions (DELETE request)
-
-
-//First I need to:
-//[x] write a patch request inside the editDish function that sends the new info to the server
-
-//Then I need to:
-//[x] write a post request inside the render new dish function that sends the new ramen data to the server
-
-//Finally, I need to:
-//[] add a delete request inside the button event listener to delete the selected ramen from the server
 
 //Global variables
 

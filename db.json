@@ -5,15 +5,15 @@
       "name": "Naruto Ramen",
       "restaurant": "Naruto",
       "image": "./assets/ramen/naruto.jpg",
-      "rating": 10,
-      "comment": "My absolute fave!"
+      "rating": 5,
+      "comment": "test2"
     },
     {
       "name": "New Ramen",
       "restaurant": "My House",
       "image": "https://inquiringchef.com/wp-content/uploads/2022/11/Easy-Miso-Ramen_square-0723.jpg",
-      "rating": 2,
-      "comment": "ok",
+      "rating": 4,
+      "comment": "test2",
       "id": 3
     }
   ]
