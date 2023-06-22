@@ -5,16 +5,25 @@
 // See the details for the first ramen as soon as the page loads (without clicking on an image)
 // Update the rating and comment for a ramen by submitting a form. Changes should be reflected on the frontend. No need to persist. You can add this HTML to the index.html file to create the edit form:
 
+//Delete a ramen (you can add a "delete" button if you'd like, or use an existing element to handle the delete action). The ramen should be removed from the ramen-menu div, and should not be displayed in the ramen-detail div. No need to persist.
+
 //First I need to:
 //[x] add the render dish function inside the .then chain with an array key of [0] to show the first ramen on page load
 //[x] declare the edit form and edit form input variables in global scope
 //[x] add a submit event listener to the edit ramen form that passes in a callback to edit 
 //[x] write an edit function to edit the rating and comment of the text content of those variables on the DOM based on the value of the inputs
 
+//Then I need to:
+//[x] add a delete button to the DOM with the text "Delete"
+//[] add a click even listener to the button that passes in a callback to remove the ramen data from both the menu and detail div
+
 
 //Global variables
 
 const URL = "http://localhost:3000/ramens"
+const button = document.createElement('button')
+button.textContent = "Delete"
+
 
 //DOM Selectors
 
@@ -70,6 +79,8 @@ function renderDish(ramens) {
     rating.textContent = ramens.rating
     comment.textContent = ramens.comment
 
+    ramenForm.appendChild(button)
+
 }
 
 function renderNewDish() {
@@ -81,7 +92,7 @@ function renderNewDish() {
     rating.textContent = newRating.value
     comment.textContent = newComment.value
     
-    ramenBar.append(image)
+    ramen.append(image)
 }
 
 
@@ -95,6 +106,11 @@ ramenForm.addEventListener('submit', (e) => {
 editForm.addEventListener('submit', (e) => {
     e.preventDefault()
     editDish()
+})
+
+button.addEventListener('click', () => {
+    const image = document.querySelector('img')
+    image.remove()
 })
 
 //Edit function
