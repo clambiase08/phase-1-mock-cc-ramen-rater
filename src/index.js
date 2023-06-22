@@ -6,10 +6,15 @@
 // 3. Create a new ramen after submitting the new-ramen form. The new ramen should be added to the#ramen-menu div. The new ramen does not need to persist; in other words, if you refresh the page, it's okay that the new ramen is no longer on the page.
 
 // First Deliverable, I need to:
-//[] declaure a URL variable equal to the json server url
-//[] write a fetch function that takes in a url and returns a fetch
-//[] initialize the fetch on page load, passing in the URL and chaining a .then to iterate over the data with .forEach, passing in a render function into the forEach 
-//[] write a render function to render the ramen images to the div by creating an image tag, setting the src equal to the keys.data from the json object and appending it to the DOM
+//[x] declaure a URL variable equal to the json server url
+//[x] write a fetch function that takes in a url and returns a fetch
+//[x] initialize the fetch on page load, passing in the URL and chaining a .then to iterate over the data with .forEach, passing in a render function into the forEach 
+//[x] write a render function to render the ramen images to the div by creating an image tag, setting the src equal to the keys.data from the json object and appending it to the DOM
+
+
+//Second Deliverable, I need to:
+//[x] write a render function to render the ramen details to the div by selecting each of the HTML elements in global scope, then in the render function setting their text content equal to the keys.data from the json object
+//[x] adding a click event listener to the image variable inside the render images function that passes in a click, and calls the render dish function
 
 //Global variables
 
@@ -18,6 +23,11 @@ const URL = "http://localhost:3000/ramens"
 //DOM Selectors
 
 const ramenBar = document.querySelector('#ramen-menu')
+const detailPic = document.querySelector('.detail-image')
+const ramenName = document.querySelector('.name')
+const restaurant = document.querySelector('.restaurant')
+const rating = document.querySelector("#rating-display")
+const comment = document.querySelector("#comment-display")
 
 
 //Fetch function
@@ -41,4 +51,15 @@ function renderImages(ramens) {
     image.src = ramens.image
 
     ramenBar.append(image)
+
+    image.addEventListener('click', () => renderDish(ramens))
+}
+
+function renderDish(ramens) {
+    detailPic.src = ramens.image
+    ramenName.textContent = ramens.ramenName
+    restaurant.textContent = ramens.restaurant
+    rating.textContent = ramens.rating
+    comment.textContent = ramens.comment
+
 }
